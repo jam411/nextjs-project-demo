@@ -1,8 +1,8 @@
+/* eslint-disable prettier/prettier */
 import styled from 'styled-components'
 import type { Responsive } from 'types/styles'
 import { toPropValue, Color, Space } from 'utils/styles'
 
-// Box property
 export type BoxProps = {
   color?: Responsive<Color>
   backgroundColor?: Responsive<Color>
@@ -27,12 +27,10 @@ export type BoxProps = {
 
 /**
  * Box Component
- * ${(props) => toPropsValue('color', props.color, props.theme)}
  */
 const Box = styled.div<BoxProps>`
   ${(props) => toPropValue('color', props.color, props.theme)}
-  ${(props) =>
-    toPropValue('background-color', props.backgroundColor, props.theme)}
+  ${(props) => toPropValue('background-color', props.backgroundColor, props.theme)}
   ${(props) => toPropValue('width', props.width, props.theme)}
   ${(props) => toPropValue('height', props.height, props.theme)}
   ${(props) => toPropValue('min-width', props.minWidth, props.theme)}
@@ -51,3 +49,5 @@ const Box = styled.div<BoxProps>`
   ${(props) => toPropValue('padding-bottom', props.paddingBottom, props.theme)}
   ${(props) => toPropValue('padding-right', props.paddingRight, props.theme)}
 `
+
+export default Box
